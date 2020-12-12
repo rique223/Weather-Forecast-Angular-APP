@@ -28,6 +28,7 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -91,9 +92,14 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.css",
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/jquery/dist/jquery.js",
+              "node_modules/popper.js/dist/umd/popper.js",
+              "node_modules/bootstrap/dist/js/bootstrap.js"
+            ]
           }
         },
         "lint": {
@@ -124,5 +130,8 @@
       }
     }
   },
-  "defaultProject": "projeto-front-end-action-labs"
+  "defaultProject": "projeto-front-end-action-labs",
+  "cli": {
+    "analytics": "a0b24c1a-240b-47b7-a984-4cfb56d805ac"
+  }
 }
