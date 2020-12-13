@@ -4,9 +4,9 @@
 Esse projeto foi desenvolvido como code test para a vaga de Desenvolvedor Front-end na empresa Action Labs. Esse projeto funciona como um aplicativo de previsão do tempo que te permite visualizar a previsão de clima atual ou dos próximos 5 dias da cidade consultada.
 
 ## Tecnologias Utilizadas no projeto
-Angular CLI: v11.0.4
-Node: v14.15.0
-Bootstrap: v4.5.3
+Angular CLI: v11.0.4  
+Node: v14.15.0  
+Bootstrap: v4.5.3  
 
 ## Como executar esse projeto?
 1. Clone ou baixe esse repositório
