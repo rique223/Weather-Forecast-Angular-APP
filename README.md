@@ -1,7 +1,7 @@
 #[PT-BR]
 
 ## ProjetoFrontEndActionLabs
-Esse projeto foi desenvolvido como code test para a vaga de Desenvolvedor Front-end na empresa Action Labs. Esse projeto funciona como um aplicativo de previsão do tempo que te permite visualizar a previsão de clima atual na sua cidade ou dos próximos 5 dias.
+Esse projeto foi desenvolvido como code test para a vaga de Desenvolvedor Front-end na empresa Action Labs. Esse projeto funciona como um aplicativo de previsão do tempo que te permite visualizar a previsão de clima atual ou dos próximos 5 dias da cidade consultada.
 
 ## Tecnologias Utilizadas no projeto
 Angular CLI: v11.0.4
