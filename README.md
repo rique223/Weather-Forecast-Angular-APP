@@ -1,4 +1,4 @@
-#[PT-BR]
+#PT-BR
 
 ## ProjetoFrontEndActionLabs
 Esse projeto foi desenvolvido como code test para a vaga de Desenvolvedor Front-end na empresa Action Labs. Esse projeto funciona como um aplicativo de previsão do tempo que te permite visualizar a previsão de clima atual ou dos próximos 5 dias da cidade consultada.
@@ -13,7 +13,7 @@ Bootstrap: v4.5.3
 2. Abra o projeto com seu editor de código favorito
 3. Rode o comando `ng serve --o` e o projeto será executa em localhost:4200
 
-#[EN]
+#EN
 
 ## ProjetoFrontEndActionlabs
 This project was developed as a code test for the position of Front-end developer at the Action Labs corporation. This project works as an aplication for weather forecast which allows you to see today's forecast or from the next 5 days of the queried city.
