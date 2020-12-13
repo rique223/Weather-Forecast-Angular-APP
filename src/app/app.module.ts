@@ -4,10 +4,14 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { InternaComponent } from './Components/interna/interna.component';
+import { SearchComponent } from './Components/search/search.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    InternaComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,

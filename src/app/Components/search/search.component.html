@@ -1,0 +1,68 @@
+<div class="container-fluid bg-index">
+  <div class="row">
+    <div class="col-lg-12 centered bg-search">
+      <form action="" class="search-centered">
+        <label class="form-label">Weather in your city</label>
+        <div class="row no-gutters">
+          <div class="col-lg-11 col-sm-12 mt-2">
+            <input #search placeholder="Your city name" type="email" class="form-control border-right-0" aria-describedby="emailHelp">
+          </div>
+          <div class="col mt-1" style="margin-left: -30px;">
+            <button style="height: 100%;" class="btn btn-link" (click)="getWeather(search.value); $event.preventDefault()">
+              <img src="../assets/icon.png" alt="">
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="container container-cards">
+    <div *ngFor="let list of weather?.list" class="row row-card centered mt-3">
+      <a routerLink="/details" routerLinkActive="active" [state]="{ data: list }" class="anchor">
+        <div class="card p-3">
+          <div class="row">
+            <div class="col-lg-4">
+              <div class="temp centered">
+                <span>{{ list.main.temp }}°C</span>
+              </div>
+            </div>
+    
+            <div class="col-lg-5">
+              <div class="info p-3">
+                <h2>{{ list.name }}, {{ list.sys.country }} <img class="mb-2" src="{{ setFlagIconURL(list.sys.country) }}" alt="bandeira"></h2>
+    
+                <div class="row">
+                  <div class="col-lg-4">
+                    <p class="maxmin">Máx:</p>
+                  </div>
+    
+                  <div class="col-lg-5">
+                    <p class="maxima-valor">{{ list.main.temp_max }}°C</p>
+                  </div>
+                </div>
+    
+                <div class="row">
+                  <div class="col-lg-4">
+                    <p class="maxmin">Mín:</p>
+                  </div>
+    
+                  <div class="col-lg-5">
+                    <p class="minima-valor">{{ list.main.temp_min }}°C</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+    
+            <div class="col-lg-3">
+              <div class="desc">
+                <img class="mb-3" src="{{ setIconURL(list.weather[0].icon) }}" alt="forecast">
+                <p>{{ list.weather[0].description }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>

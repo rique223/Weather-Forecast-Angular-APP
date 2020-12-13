@@ -1,0 +1,112 @@
+<div class="container-fluid bg-index">
+  <div class="row">
+    <div class="col-lg-12 centered bg-search">
+      <a routerLink="/search" routerLinkActive="active"><i class="icon ion-android-arrow-back"></i></a>
+
+      <form action="" class="search-centered">
+        <div class="row no-gutters">
+          <div class="col mt-2">
+            <input #search placeholder="Your city name" type="email" class="form-control border-right-0" aria-describedby="emailHelp" disabled>
+          </div>
+          <div class="col mt-1" style="margin-left: -50px;">
+            <button style="height: 100%;" class="btn btn-link" disabled>
+              <img src="../assets/icon.png" alt="Search button">
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-12 centered py-4" style="display: flex; flex-direction: column;">
+      <h2 class="city-weather">Weather in {{ weatherById?.name }}, {{ weatherById.sys?.country }}</h2>
+      <p *ngIf="weatherById">{{ convertUnixtoLocale()[2] }}</p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="offset-lg-3 offset-md-2 col-lg-6">
+      <div class="card p-4">
+        <div class="row mb-5">
+          <div class="col-lg-3">
+            <div class="temp centered">
+              <span>{{ weatherById.main?.temp }}°C</span>
+              <div class="desc py-2">
+                <img *ngIf="weather" class="mb-2" src="{{ setIconURL(weather?.weather[0]?.icon) }}" alt="forecast">
+                <p *ngIf="weather" class="mb-0">{{ weatherById?.weather[0]?.description }}</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="col-lg-9 main-table">
+            <div class="row no-gutters">
+              <div class="col-lg-3">
+                <p class="maxmin mb-1">Máx:</p>
+              </div>
+
+              <div class="col-lg-6">
+                <p *ngIf="weather" class="maxima-valor">{{ weatherById?.main.temp_max }}°C</p>
+              </div>
+            </div>
+
+            <div class="row no-gutters">
+              <div class="col-lg-3">
+                <p class="maxmin">Mín:</p>
+              </div>
+
+              <div class="col-lg-6">
+                <p *ngIf="weather" class="minima-valor">{{ weatherById?.main.temp_min }}°C</p>
+              </div>
+            </div>
+
+            <div class="row no-gutters">
+              <div class="col-lg-3">
+                <p class="maxmin">Sunrise:</p>
+              </div>
+
+              <div class="col-lg-6">
+                <p *ngIf="weatherById" class="sunrise-sunset">{{ convertUnixtoLocale()[0] }}</p>
+              </div>
+            </div>
+
+            <div class="row no-gutters">
+              <div class="col-lg-3">
+                <p class="maxmin">Sunset:</p>
+              </div>
+
+              <div class="col-lg-6">
+                <p *ngIf="weatherById" class="sunrise-sunset">{{ convertUnixtoLocale()[1] }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row week-title ml-0 mb-2">
+          <h2 class="mr-3">5 day weather forecast</h2>
+          <p class="mb-0 mt-2">every 3 hours</p>
+        </div>
+
+
+        <div *ngIf="weekWeather">
+          <div *ngFor="let list of weekWeather.list" class="row bg-list ml-0 px-4">
+            <div class="col-lg-3 col-sm-12" style="display: flex; flex-direction: column; justify-content: center;">
+              <span class="date">{{ convertWeekUnixtoLocale(list.dt)[0] }}</span>
+              <p class="mb-0 time">{{ convertWeekUnixtoLocale(list.dt)[1] }}</p>
+            </div>
+  
+            <div class="col-lg-5 col-sm-12" style="display: flex; flex-direction: row; align-items: center;">
+              <img class="mr-3" src="{{ setIconURL(list?.weather[0]?.icon) }}" alt="">
+              <p class="desc-text mb-0">{{ list.weather[0].description }}</p>
+            </div>
+  
+            <div class="col-lg-4 col-sm-12" style="display: flex; align-items: center;">
+              <p class="mb-0 mr-4 maxima-valor-list">{{ list.main.temp_max }}°C</p>
+              <p class="mb-0 minima-valor-list">{{ list.main.temp_min }}°C</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
