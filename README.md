@@ -1,27 +1,31 @@
-# ProjetoFrontEndActionLabs
+# PT-BR
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.4.
+## ProjetoFrontEndActionLabs
+Esse projeto foi desenvolvido como code test para a vaga de Desenvolvedor Front-end na empresa Action Labs. Esse projeto funciona como um aplicativo de previsão do tempo que te permite visualizar a previsão de clima atual ou dos próximos 5 dias da cidade consultada.
 
-## Development server
+## Tecnologias Utilizadas no projeto
+Angular CLI: v11.0.4  
+Node: v14.15.0  
+Bootstrap: v4.5.3  
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Como executar esse projeto?
+1. Clone ou baixe esse repositório
+2. Abra o projeto com seu editor de código favorito
+3. Rode os comandos `yarn` ou `npm install` para instalar as dependências necessárias a para execução correta do projeto
+4. Rode o comando `ng serve --o` e o projeto será executa em localhost:4200
 
-## Code scaffolding
+# EN
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## ProjetoFrontEndActionlabs
+This project was developed as a code test for the position of Front-end developer at the Action Labs corporation. This project works as an aplication for weather forecast which allows you to see today's forecast or from the next 5 days of the queried city.
 
-## Build
+## Technologies employed in the project
+Angular CLI: v11.0.4
+Node: v14.15.0
+Bootstrap: v4.5.3
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## How to run this project?
+1. Clone or download this repository
+2. Open the project in your favorite code editor
+3. Run the commands `yarn` or `npm install` to install the necessary dependencies for the correct build and execution of the project
+4. Run the command `ng serve --o` and the app will be executed at localhost:4200
