@@ -17,7 +17,7 @@ Bootstrap: v4.5.3
 # EN
 
 ## ProjetoFrontEndActionlabs
-This project was developed as a code test for the position of Front-end developer at the Action Labs corporation. This project works as an aplication for weather forecast which allows you to see today's forecast or from the next 5 days of the queried city.
+This project was developed as a code test for the position of Front-end developer at the Action Labs software company. This project works as an aplication for weather forecast which allows you to see today's forecast or from the next 5 days of the queried city.
 
 ## Technologies employed in the project
 Angular CLI: v11.0.4
