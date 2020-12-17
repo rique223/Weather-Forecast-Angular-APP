@@ -18,8 +18,8 @@
   </div>
 
   <div class="container container-cards">
-    <div *ngFor="let list of weather?.list" class="row row-card centered mt-3">
-      <a routerLink="/details" routerLinkActive="active" [state]="{ data: list }" class="anchor">
+    <div *ngFor="let list of weather.list" class="row row-card centered mt-3">
+      <a routerLink="/details/{{ list.id }}" routerLinkActive="active" [state]="{ data: list }" class="anchor">
         <div class="card p-3">
           <div class="row">
             <div class="col-lg-4">

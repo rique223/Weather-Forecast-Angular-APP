@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { WeatherByIDRootObject } from 'src/app/Models/weather-by-id.model';
+import { List } from 'src/app/Models/weather.model';
+import { WeekWeatherRootObject } from 'src/app/Models/week-weather.model';
 
 import { WeatherService } from '../../Services/weather.service';
+
 
 @Component({
   selector: 'app-interna',
@@ -8,9 +12,9 @@ import { WeatherService } from '../../Services/weather.service';
   styleUrls: ['./interna.component.css']
 })
 export class InternaComponent implements OnInit {
-  weather: any;
-  weatherById: any;
-  weekWeather: any;
+  weather!: List;
+  weatherById!: WeatherByIDRootObject;
+  weekWeather!: WeekWeatherRootObject;
 
   constructor(private WeatherService: WeatherService) { }
 
@@ -21,11 +25,11 @@ export class InternaComponent implements OnInit {
   }
 
   getWeatherbyID(id: number) {
-    this.weatherById = this.WeatherService.getWeatherbyID(id).subscribe((data: any) => { this.weatherById = data });
+    this.weatherById = this.WeatherService.getWeatherbyID(id).subscribe((data: WeatherByIDRootObject) => { this.weatherById = data });
   }
 
   getWeekWeather(name: String) {
-    this.weekWeather = this.WeatherService.getWeekWeather(name).subscribe((data: any) => { this.weekWeather = data });
+    this.weekWeather = this.WeatherService.getWeekWeather(name).subscribe((data: WeekWeatherRootObject) => { this.weekWeather = data });
   }
 
   setIconURL(id: String): String {
@@ -40,8 +44,6 @@ export class InternaComponent implements OnInit {
     const dateSunrise = new Date(sunrise*1000);
     const dateSunset = new Date(sunset*1000);
     const datePresentTime = new Date(presentTime*1000);
-
-    console.log(datePresentTime, typeof(datePresentTime));
 
     let mo = new Intl.DateTimeFormat('pt-br', { month: 'short' }).format(datePresentTime).slice(0, 3);
     const da = new Intl.DateTimeFormat('pt-br', { day: '2-digit' }).format(datePresentTime);

@@ -33,8 +33,8 @@
             <div class="temp centered">
               <span>{{ weatherById.main?.temp }}°C</span>
               <div class="desc py-2">
-                <img *ngIf="weather" class="mb-2" src="{{ setIconURL(weather?.weather[0]?.icon) }}" alt="forecast">
-                <p *ngIf="weather" class="mb-0">{{ weatherById?.weather[0]?.description }}</p>
+                <img *ngIf="weather" class="mb-2" src="{{ setIconURL(weather.weather[0].icon) }}" alt="forecast">
+                <p *ngIf="weather" class="mb-0">{{ weatherById.weather[0].description }}</p>
               </div>
             </div>
           </div>
@@ -46,7 +46,7 @@
               </div>
 
               <div class="col-lg-6">
-                <p *ngIf="weather" class="maxima-valor">{{ weatherById?.main.temp_max }}°C</p>
+                <p *ngIf="weather" class="maxima-valor">{{ weatherById?.main?.temp_max }}°C</p>
               </div>
             </div>
 
@@ -56,7 +56,7 @@
               </div>
 
               <div class="col-lg-6">
-                <p *ngIf="weather" class="minima-valor">{{ weatherById?.main.temp_min }}°C</p>
+                <p *ngIf="weather" class="minima-valor">{{ weatherById?.main?.temp_min }}°C</p>
               </div>
             </div>
 
@@ -96,7 +96,7 @@
             </div>
   
             <div class="col-lg-5 col-sm-12" style="display: flex; flex-direction: row; align-items: center;">
-              <img class="mr-3" src="{{ setIconURL(list?.weather[0]?.icon) }}" alt="">
+              <img class="mr-3" src="{{ setIconURL(list.weather[0].icon) }}" alt="">
               <p class="desc-text mb-0">{{ list.weather[0].description }}</p>
             </div>
   
