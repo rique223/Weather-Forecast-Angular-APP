@@ -20,9 +20,9 @@ Bootstrap: v4.5.3
 This project was developed as a code test for the position of Front-end developer at the Action Labs software company. This project works as an aplication for weather forecast which allows you to see today's forecast or from the next 5 days of the queried city.
 
 ## Technologies employed in the project
-Angular CLI: v11.0.4
-Node: v14.15.0
-Bootstrap: v4.5.3
+Angular CLI: v11.0.4  
+Node: v14.15.0  
+Bootstrap: v4.5.3  
 
 ## How to run this project?
 1. Clone or download this repository
