@@ -14,7 +14,7 @@ Bootstrap: v4.5.3
 3. Rode os comandos `yarn` ou `npm install` em sua Interface de linhas de comando favorita para instalar as dependências necessárias para execução correta do projeto
 4. Rode o comando `ng serve --o` e o projeto será executa em localhost:4200
 Ou  
-1. Você pode acessar o app hospedado em: https://weather-forecast-ed400.web.app
+Você pode acessar o app hospedado em: https://weather-forecast-ed400.web.app
 
 # EN
 
@@ -32,4 +32,4 @@ Bootstrap: v4.5.3
 3. Run the commands `yarn` or `npm install` in your favorite Command Line Interface to install the necessary dependencies for the correct build and execution of the project
 4. Run the command `ng serve --o` and the app will be executed at localhost:4200
 Or
-1. You can acces the hosted app in: https://weather-forecast-ed400.web.app
+You can acces the hosted app in: https://weather-forecast-ed400.web.app
