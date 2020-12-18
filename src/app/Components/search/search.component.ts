@@ -27,11 +27,11 @@ export class SearchComponent {
   }
 
   setIconURL(id: String): String {
-    return `http://openweathermap.org/img/w/${id}.png`;
+    return `https://openweathermap.org/img/w/${id}.png`;
   }
 
   setFlagIconURL(country: String): String {
-    return `http://openweathermap.org/images/flags/${country.toLowerCase()}.png`;
+    return `https://openweathermap.org/images/flags/${country.toLowerCase()}.png`;
   }
 
 }

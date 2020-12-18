@@ -2,13 +2,13 @@
   <div class="row">
     <div class="col-lg-12 centered bg-search">
       <form action="" class="search-centered">
-        <label class="form-label">Weather in your city</label>
         <div class="row no-gutters">
           <div class="col-lg-11 col-sm-12 mt-2">
-            <input #search placeholder="Your city name" type="email" class="form-control border-right-0" aria-describedby="emailHelp">
+            <label class="form-label" id="title">Weather in your city</label>
+            <input #search placeholder="Your city name" type="email" class="form-control border-right-0" aria-describedby="emailHelp" aria-labelledby="title">
           </div>
-          <div class="col mt-1" style="margin-left: -30px;">
-            <button style="height: 100%;" class="btn btn-link" (click)="getWeather(search.value); $event.preventDefault()">
+          <div class="col-lg-1">
+            <button style="height: auto; width: auto" class="btn btn-link" (click)="getWeather(search.value); $event.preventDefault()" aria-label="Botão de pesquisa">
               <img src="../assets/icon.png" alt="">
             </button>
           </div>

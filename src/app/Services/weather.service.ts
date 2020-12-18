@@ -16,7 +16,7 @@ export class WeatherService {
   constructor(private http: HttpClient) { }
 
   getWeather(country: String): any {
-    let baseURL: string = `http://api.openweathermap.org/data/2.5/find?q=${country}&units=metric&appid=${this.appID}`;
+    let baseURL: string = `https://api.openweathermap.org/data/2.5/find?q=${country}&units=metric&appid=${this.appID}`;
 
     try {
       return this.http.get<WeatherRootObject>(baseURL).pipe(map(response => response));
@@ -26,7 +26,7 @@ export class WeatherService {
   }
 
   getWeatherbyID(id: Number): any {
-    let baseURL = `http://api.openweathermap.org/data/2.5/weather?id=${id}&units=metric&appid=${this.appID}`;
+    let baseURL = `https://api.openweathermap.org/data/2.5/weather?id=${id}&units=metric&appid=${this.appID}`;
 
     try {
       return this.http.get<WeatherByIDRootObject>(baseURL);
@@ -36,7 +36,7 @@ export class WeatherService {
   }
 
   getWeekWeather(name: String): any {
-    let baseURL = `http://api.openweathermap.org/data/2.5/forecast?q=${name}&units=metric&appid=76d1b43ba3695cfae59aa9f7dc9b4877`;
+    let baseURL = `https://api.openweathermap.org/data/2.5/forecast?q=${name}&units=metric&appid=76d1b43ba3695cfae59aa9f7dc9b4877`;
 
     try {
       return this.http.get<WeekWeatherRootObject>(baseURL);
