@@ -1,4 +1,10 @@
 <div class="container-fluid bg-index">
+  <div class="row loading" [ngClass]="{ 'd-none': !loading }" >
+    <div class="col-lg-12">
+      <div class="spinner-grow" role="status"></div>
+    </div>
+  </div>
+
   <div class="row">
     <div class="col-lg-12 centered bg-search">
       <a routerLink="/search" routerLinkActive="active"><i class="icon ion-android-arrow-back"></i></a>
@@ -18,14 +24,14 @@
     </div>
   </div>
 
-  <div class="row">
+  <div class="row" [ngClass]="{ 'd-none': loadingUI  }">
     <div class="col-lg-12 centered py-4" style="display: flex; flex-direction: column;">
       <h2 class="city-weather">Weather in {{ weatherById?.name }}, {{ weatherById.sys?.country }}</h2>
       <p *ngIf="weatherById">{{ convertUnixtoLocale()[2] }}</p>
     </div>
   </div>
 
-  <div class="row">
+  <div class="row" [ngClass]="{ 'd-none': loadingUI  }">
     <div class="offset-lg-3 offset-md-2 col-lg-6">
       <div class="card p-4">
         <div class="row mb-5">

@@ -38,10 +38,41 @@
   background-color: #39a3db;
  }
 
+ .bg-index {
+   height: 100%;
+ }
+
  .btn {
   position: absolute;
-  top: 48%;
+  top: 44%;
   right: 0;
+ }
+
+ .cta-centered {
+   display: flex;
+   flex-direction: column;
+   height: fit-content;
+   align-items: center;
+ }
+
+ .cta-centered p {
+   font-size: 24px;
+   color: #808080;
+ }
+
+ .cta-centered svg {
+   color: #808080;
+ }
+
+ .bg-cta {
+  height: 66vh;
+ }
+
+ .bg-cta .row {
+   height: 100%;
+   align-items: center;
+   justify-content: center;
+   text-align: center;
  }
 
 /*********************Weather forecast data cards**************************/
@@ -170,6 +201,13 @@
 
   .container-cards {
     margin-top: -40px;
+  }
+
+  .loading {
+    position: absolute;
+    top: 48%;
+    left: 44.35%;
+    z-index: 2;
   }
 }
 

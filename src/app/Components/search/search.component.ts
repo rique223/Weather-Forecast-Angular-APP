@@ -16,14 +16,24 @@ export class SearchComponent {
 
   weather!: WeatherRootObject;
   city!: String;
+  hiddenFlag: boolean = false;
+  loading: boolean = false;
 
-  getWeather(country: String): any {
-    this.weather = this.WeatherService.getWeather(country).subscribe((data: WeatherRootObject)=> { this.weather = data; this.city = data.list[0].name; this._router.navigate([], {
-      relativeTo: this._route,
-      queryParams: { q: this.city },
-      queryParamsHandling: 'merge',
-      skipLocationChange: true
-    });});
+  getWeather(country: String): void {
+    this.loading = true;
+
+    setTimeout(() => {
+      this.weather = this.WeatherService.getWeather(country).subscribe((data: WeatherRootObject)=> { this.weather = data; this.city = data.list[0].name; this._router.navigate([], {
+        relativeTo: this._route,
+        queryParams: { q: this.city },
+        queryParamsHandling: 'merge',
+        skipLocationChange: true
+      });});
+      
+      this.loading = false;
+    }, 1000);
+
+    this.hiddenFlag = true;
   }
 
   setIconURL(id: String): String {

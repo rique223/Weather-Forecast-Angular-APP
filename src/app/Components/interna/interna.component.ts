@@ -15,6 +15,8 @@ export class InternaComponent implements OnInit {
   weather!: List;
   weatherById!: WeatherByIDRootObject;
   weekWeather!: WeekWeatherRootObject;
+  loading: boolean = false;
+  loadingUI: boolean = false;
 
   constructor(private WeatherService: WeatherService) { }
 
@@ -29,7 +31,15 @@ export class InternaComponent implements OnInit {
   }
 
   getWeekWeather(name: String) {
-    this.weekWeather = this.WeatherService.getWeekWeather(name).subscribe((data: WeekWeatherRootObject) => { this.weekWeather = data });
+    this.loading = true;
+    this.loadingUI = true;
+
+    setTimeout(() => {
+      this.weekWeather = this.WeatherService.getWeekWeather(name).subscribe((data: WeekWeatherRootObject) => { this.weekWeather = data });
+      
+      this.loading = false;
+      this.loadingUI = false;
+    }, 1000);
   }
 
   setIconURL(id: String): String {
