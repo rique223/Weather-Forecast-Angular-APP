@@ -1,3 +1,4 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { WeatherByIDRootObject } from 'src/app/Models/weather-by-id.model';
 import { List } from 'src/app/Models/weather.model';
@@ -26,20 +27,26 @@ export class InternaComponent implements OnInit {
     this.getWeekWeather(this.weather?.name);
   }
 
-  getWeatherbyID(id: number) {
-    this.weatherById = this.WeatherService.getWeatherbyID(id).subscribe((data: WeatherByIDRootObject) => { this.weatherById = data });
+  async getWeatherbyID(id: number) : Promise<void> {
+
+    this.weatherById = await this.WeatherService.getWeatherbyID(id).subscribe((data: WeatherByIDRootObject) => { 
+      this.weatherById = data;
+    });
   }
 
-  getWeekWeather(name: String) {
+  getWeekWeather(name: String) : void {
     this.loading = true;
-    this.loadingUI = true;
-
-    setTimeout(() => {
-      this.weekWeather = this.WeatherService.getWeekWeather(name).subscribe((data: WeekWeatherRootObject) => { this.weekWeather = data });
-      
-      this.loading = false;
-      this.loadingUI = false;
-    }, 1000);
+    
+    this.WeatherService.getWeekWeather(name).subscribe(
+      (data: WeekWeatherRootObject) => { 
+        this.weekWeather = data; 
+        this.loading = false; 
+      },
+      (err: HttpErrorResponse) => {
+        this.loading = false;
+        console.log(err);
+      }
+    )
   }
 
   setIconURL(id: String): String {

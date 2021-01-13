@@ -4,6 +4,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 
 import { WeatherRootObject } from '../../Models/weather.model';
 import { map } from 'rxjs/operators';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-search',
@@ -20,20 +21,20 @@ export class SearchComponent {
   loading: boolean = false;
 
   getWeather(country: String): void {
+    this.hiddenFlag = true;
     this.loading = true;
 
-    setTimeout(() => {
-      this.weather = this.WeatherService.getWeather(country).subscribe((data: WeatherRootObject)=> { this.weather = data; this.city = data.list[0].name; this._router.navigate([], {
-        relativeTo: this._route,
-        queryParams: { q: this.city },
-        queryParamsHandling: 'merge',
-        skipLocationChange: true
-      });});
-      
-      this.loading = false;
-    }, 1000);
-
-    this.hiddenFlag = true;
+    this.WeatherService.getWeather(country).subscribe(
+      (data: WeatherRootObject)=> { 
+        this.weather = data; 
+        this.city = data.list[0].name; 
+        this.loading = false;
+      },
+      (err: HttpErrorResponse) => {
+        this.loading = false;
+        console.log(err);
+      }
+    )
   }
 
   setIconURL(id: String): String {
