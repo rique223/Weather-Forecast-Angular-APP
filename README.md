@@ -19,7 +19,7 @@ Você pode acessar o app hospedado em: https://weather-forecast-ed400.web.app
 # EN
 
 ## ProjetoFrontEndActionlabs
-This project was developed as a code test for the position of Front-end developer at the Action Labs software company. This project works as an aplication for weather forecast which allows you to see today's forecast or from the next 5 days of the queried city.
+This project was created as a coding test for the Front-end Developer position at Action Labs. It serves as a weather forecast application, enabling users to view the forecast for either today or the next 5 days for the specified city.
 
 ## Technologies employed in the project
 Angular CLI: v11.0.4  
